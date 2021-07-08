@@ -1,6 +1,5 @@
 import openpyxl
 import random
-import math
 import os
 # This is declaring the path of where to look for your excel file
 os.chdir('/Users/williamcalhoun/Desktop/')
@@ -30,7 +29,7 @@ def load_students():
 
 def get_assignments(week):
     for i in range(7):
-        number = math.floor(random.randint(0, (len(students)-1)))
+        number = random.randint(0, (len(students)-1))
         weekly_students.append(f"{students[number]}: {random.choice(core_assignments[week])}")
         del students[number]
     print(weekly_students)
